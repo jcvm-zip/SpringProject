@@ -1,8 +1,10 @@
 package br.com.erudio.springproject.service;
 
 import br.com.erudio.springproject.data.vo.v1.PersonVO;
+import br.com.erudio.springproject.data.vo.v2.PersonVOV2;
 import br.com.erudio.springproject.exceptions.ResourceNotFoundException;
 import br.com.erudio.springproject.mapper.DozerMapper;
+import br.com.erudio.springproject.mapper.custom.PersonMapper;
 import br.com.erudio.springproject.model.Person;
 import br.com.erudio.springproject.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class PersonServices {
 
     @Autowired
     PersonRepository repository;
+
+    @Autowired
+    PersonMapper mapper;
 
     public PersonVO findById(Long id) {
 
